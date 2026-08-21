@@ -3,7 +3,7 @@ on:
   push:
     branches: [main]
     paths:
-      - "jianfeng-taste-pages-v2.zip"
+      - "jianfeng-taste-pages-v3.part*"
       - ".github/workflows/deploy-pages.yml"
   workflow_dispatch:
 permissions:
@@ -21,10 +21,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Extract prebuilt Pages package
+      - name: Reassemble and extract prebuilt Pages package
         run: |
+          cat jianfeng-taste-pages-v3.part* > jianfeng-taste-pages-v3.zip
           mkdir -p _site
-          python3 -m zipfile -e jianfeng-taste-pages-v2.zip _site
+          python3 -m zipfile -e jianfeng-taste-pages-v3.zip _site
           touch _site/.nojekyll
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
