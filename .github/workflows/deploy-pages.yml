@@ -1,22 +1,18 @@
 name: Deploy static site to GitHub Pages
-
 on:
   push:
     branches: [main]
     paths:
-      - "jianfeng-taste-pages.zip"
+      - "jianfeng-taste-pages-v2.zip"
       - ".github/workflows/deploy-pages.yml"
   workflow_dispatch:
-
 permissions:
   contents: read
   pages: write
   id-token: write
-
 concurrency:
   group: pages
   cancel-in-progress: true
-
 jobs:
   deploy:
     environment:
@@ -28,7 +24,7 @@ jobs:
       - name: Extract prebuilt Pages package
         run: |
           mkdir -p _site
-          python3 -m zipfile -e jianfeng-taste-pages.zip _site
+          python3 -m zipfile -e jianfeng-taste-pages-v2.zip _site
           touch _site/.nojekyll
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
