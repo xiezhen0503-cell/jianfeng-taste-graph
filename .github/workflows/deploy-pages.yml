@@ -3,7 +3,7 @@ on:
   push:
     branches: [main]
     paths:
-      - "jianfeng-taste-pages-v5.part*"
+      - "jianfeng-taste-pages-v6-small.part*"
       - ".github/workflows/deploy-pages.yml"
   workflow_dispatch:
 permissions:
@@ -23,9 +23,9 @@ jobs:
       - uses: actions/checkout@v4
       - name: Reassemble and extract prebuilt Pages package
         run: |
-          cat jianfeng-taste-pages-v5.part* > jianfeng-taste-pages-v5.zip
+          cat jianfeng-taste-pages-v6-small.part* > jianfeng-taste-pages-v6.zip
           mkdir -p _site
-          python3 -m zipfile -e jianfeng-taste-pages-v5.zip _site
+          python3 -m zipfile -e jianfeng-taste-pages-v6.zip _site
           touch _site/.nojekyll
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
