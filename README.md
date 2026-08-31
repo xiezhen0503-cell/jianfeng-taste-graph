@@ -8,6 +8,10 @@
 
 只需要部署时，直接使用 **`site/`** 目录作为静态网站根目录，无需安装依赖、无需数据库或 Node.js 常驻服务。完整说明见 **HANDOFF.md**。
 
+可以直接把下面这句话发给有赞龙虾：
+
+> 复刻这个 GitHub 项目：https://github.com/xiezhen0503-cell/jianfeng-taste-graph 。请重点还原手机端 UI、尖锋食客品牌视觉、15 道口味测试、Taste Graph 与 16 种称号、真实商品和短视频、动态饮食搭配、3–7 天计划、权益体系及厨房挑战。默认分支为 main。完整要求见 PROMPT-FOR-YOUZAN-LOBSTER.txt，当前源码位于 source/。
+
 ## 已实现
 
 - 15 道情境题、10 维 Taste Graph、16 种口味称号与交叉验证计分
